@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>웹 프로그래밍 과제</title>
+
+    <script>
+        function show() {
+            var submit = document.getElementById("submit");
+            var divArray = document.getElementsByTagName("div");
+
+            for(var i=0; i<divArray.length; i++) {
+                var div = divArray[i];
+                div.style.visibility = "visible";
+            }
+            submit.style.visibility = "visible";
+        }
+
+        function ok() {
+            alert('제출되었습니다. 감사합니다.');
+        }
+    </script>
+
+    <style>
+        fieldset {
+            background-color: aliceblue;
+        }
+
+        legend {
+            background-color: gray;
+            color: white;
+            padding: 5px;
+        }
+
+        li {
+            list-style-type: decimal;
+            margin-bottom: 20px;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        div {
+            visibility: hidden;
+            padding-bottom: 10px;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin: 10px;
+        }
+
+        textarea {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <h3>웹 프로그래밍 과제</h3>
+    <hr>
+    <fieldset>
+        <legend>볼 페이지를 클릭해주세요.</legend>
+        <ul>
+            <a href="html2.html"><li onmouseover="this.style.backgroundColor='pink'" onmouseout="this.style.backgroundColor='aliceblue'">본인 소개 페이지</li></a>
+            <a href="html3.html"><li onmouseover="this.style.backgroundColor='pink'" onmouseout="this.style.backgroundColor='aliceblue'">관심 기술에 대한 상세내용</li></a>
+            <a href="html4.html"><li onmouseover="this.style.backgroundColor='pink'" onmouseout="this.style.backgroundColor='aliceblue'">주제 관련 Future Plan</li></a>
+        </ul>
+    </fieldset>
+    <br>
+    페이지를 모두 보셨다면 설문조사 버튼을 클릭해주세요.<br>
+    <br>
+    <button onclick="show()">설문조사</button>
+
+    <div>
+        <form>
+            본 페이지의 내용들은 어떠하였습니까?(1개만 선택)<br>
+            <input type="radio" name="grade">매우 안좋음 <input type="radio" name="grade">안좋음 <input type="radio" name="grade">보통 <input type="radio" name="grade">좋음 <input type="radio" name="grade">매우 좋음
+        </form>
+    </div>
+
+    <div>
+        <form>
+            가장 인상깊었던 페이지들을 체크해주세요(중복가능)<br>
+            <input type="checkbox"> 본인 소개 페이지 <input type="checkbox"> 관심 기술 및 관련 기업 상세 내용 <input type="checkbox"> 주제 관련 Future Plan
+        </form>
+    </div>
+
+    <div>
+        <form>
+            본 페이지에 대한 생각을 적어주세요<br>
+            <textarea rows="10" cols="90"></textarea>
+        </form>
+    </div>
+
+    <button id="submit" onclick="ok()" style="visibility: hidden;">제출</button>
+</body>
+</html>
